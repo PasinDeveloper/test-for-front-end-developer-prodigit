@@ -126,15 +126,15 @@ ul {
   color: var(--clr-purple);
 }
 
-.sectionTitleWhite{
-  color: var(--clr-white);
-}
-
 .sectionMainHeader{
   font-weight: var(--font-bold);
   font-size: 35px;
   line-height: 52.5px;
   color: var(--clr-textDark);
+}
+
+.sectionTitleWhite, .sectionMainHeaderWhite{
+  color: var(--clr-white);
 }
 
 .sectionMainHeaderGreenText{
@@ -150,7 +150,9 @@ ul {
 
 .gradientSeperatorPurple{
   background: var(--gradient-purple);
-  
+  height: 5px;
+  width: 15%;
+  margin-top: 30px;
 }
 
 .gradientSeperatorPurple{}
