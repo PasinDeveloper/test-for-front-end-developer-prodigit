@@ -117,11 +117,6 @@ ul {
   list-style-type: none;
 }
 
-/************************************************/
-/*                 Main Styles                  */
-/************************************************/
-
-/*==========  ==========*/
 .sectionTitlePurple, .sectionTitleWhite{
   font-weight: var(--font-bold);
   font-size: 20px;
@@ -135,6 +130,40 @@ ul {
   color: var(--clr-white);
 }
 
+.sectionMainHeader{
+  font-weight: var(--font-bold);
+  font-size: 35px;
+  line-height: 52.5px;
+  color: var(--clr-textDark);
+}
+
+.sectionMainHeaderGreenText{
+  color: var(--clr-green);
+}
+
+.sectionSubHeader{
+  font-weight: var(--font-medium);
+  font-size: 25px;
+  color: var(--clr-purple);
+  line-height: 37.5px;
+}
+
+.gradientSeperatorPurple{
+  background: var(--gradient-purple);
+  
+}
+
+.gradientSeperatorPurple{}
+
+
+
+
+
+/************************************************/
+/*                 Main Styles                  */
+/************************************************/
+
+/*==========  ==========*/
 .container {
   max-width: 1600px;
 	width: 100%;
@@ -422,7 +451,7 @@ ul {
 /*========== About Us Section ==========*/
 .aboutUs {
   display: flex;
-  width: 100%;
+  max-width: 100%;
   margin: 50px 90px;
 }
 
