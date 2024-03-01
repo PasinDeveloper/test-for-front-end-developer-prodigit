@@ -155,7 +155,12 @@ ul {
   margin-top: 30px;
 }
 
-.gradientSeperatorPurple{}
+.gradientSeperatorOrange{
+  background: var(--gradient-orange);
+  height: 5px;
+  width: 15%;
+  margin-top: 30px;
+}
 
 
 
