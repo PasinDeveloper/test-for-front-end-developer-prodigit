@@ -117,15 +117,24 @@ ul {
   list-style-type: none;
 }
 
-h2 {
-  filter: var(--png-overlayOrange);
-}
-
 /************************************************/
 /*                 Main Styles                  */
 /************************************************/
 
 /*==========  ==========*/
+.sectionTitlePurple, .sectionTitleWhite{
+  font-weight: var(--font-bold);
+  font-size: 20px;
+}
+
+.sectionTitlePurple{
+  color: var(--clr-purple);
+}
+
+.sectionTitleWhite{
+  color: var(--clr-white);
+}
+
 .container {
   max-width: 1600px;
 	width: 100%;
@@ -354,7 +363,7 @@ h2 {
   width: 15%;
   height: 5px;
   background: var(--gradient-orange);
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .gradiantOverlay .primaryCta{
@@ -409,3 +418,15 @@ h2 {
 .ctaList .secondaryCtaThreeIcon{
   background-image: url(images/headerIconThree.png);
 }
+
+/*========== About Us Section ==========*/
+.aboutUs {
+  display: flex;
+  width: 100%;
+  margin: 50px 90px;
+}
+
+/*========== About Us Section: Left ==========*/
+
+
+/*========== About Us Section: Right ==========*/
