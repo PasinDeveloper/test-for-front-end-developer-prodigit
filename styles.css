@@ -483,7 +483,7 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   max-width: 100%;
-  margin: 50px 90px;
+  margin: 90px;
 }
 
 /*========== About Us Section: Left ==========*/
@@ -491,7 +491,7 @@ ul {
   max-width: 50%;
   display: flex;
   flex-direction: column;
-  line-height: 20px;
+  line-height: 25px;
 }
 
 .aboutUs .aboutUsLeft .aboutUsCta {
@@ -514,12 +514,13 @@ ul {
 .aboutUs .aboutUsLeft p:nth-of-type(2) {
   margin-top: 0px;
   padding-right: 20%;
+  line-height: 28px;
 }
 
 /*========== About Us Section: Right ==========*/
 .aboutUs .aboutUsRight {
   position: relative;
-  width: 60%;
+  flex: 1;
 }
 
 .aboutUsRight .aboutUsRightGrid {
@@ -608,4 +609,5 @@ ul {
   width: 80px;
   background-color: var(--clr-green);
   padding: 10px;
+  border-radius: 3px;
 }
