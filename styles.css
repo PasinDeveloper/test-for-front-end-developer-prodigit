@@ -196,7 +196,6 @@ ul {
 
 /*==========  ==========*/
 .container {
-  max-width: 1600px;
   width: 100%;
   margin-inline: auto;
 }
@@ -219,6 +218,13 @@ ul {
   color: var(--clr-white);
   font-weight: var(--font-regular);
   font-size: var(--smaller-font-size);
+}
+
+.navigationContainer .topBar .topBarContent {
+  width: 100%;
+  display: flex;
+  max-width: 1600px;
+  margin-inline: auto;
   padding: 0px 30px;
   max-height: 30px;
   gap: 50px;
@@ -325,12 +331,20 @@ ul {
 
 /*========== Navigation: Main Navigation ==========*/
 .navigationContainer .mainNavigation {
-  display: flex;
-  align-items: center;
-  column-gap: 100px;
-  padding: 5px 30px;
+  width: 100%;
   color: var(--clr-textDark);
   background-color: var(--clr-white);
+}
+
+.navigationContainer .mainNavigation .mainNavigationContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  column-gap: 100px;
+  padding: 5px 30px;
 }
 
 /*========== Main Navigation: Logo ==========*/
@@ -387,6 +401,8 @@ ul {
 .mainContainer {
   display: flex;
   flex-direction: column;
+  max-width: 1600px;
+  margin-inline: auto;
 }
 
 /*========== Main Container: Header Section ==========*/
@@ -613,8 +629,9 @@ ul {
 }
 
 /*========== Our Services Section ==========*/
-.ourServices{
+.ourServices {
   width: 100%;
+  height: 100%;
   background-image: url(images/ourServicesBgBack.jpg);
   background-position: top center;
   background-size: cover;
@@ -642,15 +659,85 @@ ul {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 50px;
+  gap: 50px;
 }
 
 .servicesGridRowOne,
 .servicesGridRowTwo {
   width: 100%;
   display: flex;
+  justify-content: space-between;
+}
+
+.servicesGridRowOneCard,
+.servicesGridRowTwoCard {
+  position: relative;
+  width: 310px;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  padding: 15px;
+  padding-top: 40px;
+  background-color: var(--clr-white);
+  border-radius: 10px;
+}
+
+.servicesGridRowOneCard:hover,
+.servicesGridRowTwoCard:hover {
+  background-color: var(--clr-orange);
+  box-shadow: 4px 4px 65px 0px #00000073;
+  color: var(--clr-white);
+  transition: 0.3s ease-in-out;
+}
+
+.servicesGridRowOneCard:hover .cardIndicator span,
+.servicesGridRowTwoCard:hover .cardIndicator span {
+  background-color: #fff1aa;
+  transition: 0.3s ease-in-out;
+}
+
+.servicesGridRowOneCard:hover .cardIndicator,
+.servicesGridRowOneCard:hover .cardIndicator {
+  top: -2px;
+  transition: 0.3s ease-in-out;
+}
+
+.servicesGridRowOneCard .cardIndicator,
+.servicesGridRowTwoCard .cardIndicator {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.servicesGridRowOneCard .cardIndicator span,
+.servicesGridRowTwoCard .cardIndicator span {
+  display: block;
+  margin-inline: auto;
+  width: 60px;
+  height: 7px;
+  border-radius: 5px;
+  background-color: var(--clr-orange);
 }
 
 .servicesGridRowOneCard img,
 .servicesGridRowTwoCard img {
-  width: 50px;
+  width: 80px;
+  margin-inline: auto;
+}
+
+.servicesGridRowOneCard h5,
+.servicesGridRowTwoCard h5 {
+  width: 100%;
+  text-align: center;
+  line-height: 6px;
+}
+
+.servicesGridRowOneCard p,
+.servicesGridRowTwoCard p {
+  font-weight: var(--font-regular);
+  font-size: var(--smaller-font-size);
 }
