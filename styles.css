@@ -40,6 +40,7 @@
     brightness(86%) contrast(83%);
   --png-overlayGrey: invert(75%) sepia(0%) saturate(309%) hue-rotate(296deg)
     brightness(96%) contrast(85%);
+  --png-overlayWhite: filter: invert(99%) sepia(0%) saturate(1943%) hue-rotate(185deg) brightness(110%) contrast(100%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -264,15 +265,15 @@ ul {
 }
 
 .topBarInfo li .infoEmail {
-  background-image: url(images/top-nav-email.png);
+  background-image: url(images/topNavEmail.png);
 }
 
 .topBarInfo li .infoLocation {
-  background-image: url(images/top-nav-location.png);
+  background-image: url(images/topNavLocation.png);
 }
 
 .topBarInfo li .infoTime {
-  background-image: url(images/top-nav-time.png);
+  background-image: url(images/topNavTime.png);
 }
 
 /*========== Top Bar: Right ==========*/
@@ -280,6 +281,10 @@ ul {
   display: flex;
   gap: 10px;
   align-items: center;
+}
+
+.topBar .topBarRight .serviceLinks li:hover {
+  color: var(--clr-orange);
 }
 
 .topBarRight .serviceLinks li:nth-child(even) {
@@ -314,19 +319,19 @@ ul {
 }
 
 .socialLinks li .topSocialTwitter {
-  background-image: url(images/top-nav-twitter.png);
+  background-image: url(images/topNavTwitter.png);
 }
 
 .socialLinks li .topSocialFacebook {
-  background-image: url(images/top-nav-facebook.png);
+  background-image: url(images/topNavFacebook.png);
 }
 
 .socialLinks li .topSocialInstagram {
-  background-image: url(images/top-nav-instagram.png);
+  background-image: url(images/topNavInstagram.png);
 }
 
 .socialLinks li .topSocialPinterest {
-  background-image: url(images/top-nav-pinterest.png);
+  background-image: url(images/topNavPinterest.png);
 }
 
 /*========== Navigation: Main Navigation ==========*/
@@ -642,7 +647,7 @@ ul {
   width: 100%;
   height: 100%;
   background-image: url(images/ourServicesBgFront.png);
-  background-position: 0 center;
+  background-position: center 126px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -650,7 +655,7 @@ ul {
 .ourServices .colorOverlay {
   width: 100%;
   height: 100%;
-  background: var(--overlay-purple);
+  background-color: var(--overlay-purple);
   padding: 70px 90px;
 }
 
@@ -682,6 +687,7 @@ ul {
   padding-top: 40px;
   background-color: var(--clr-white);
   border-radius: 10px;
+  border: 2px solid transparent;
 }
 
 .servicesGridRowOneCard:hover,
@@ -689,6 +695,7 @@ ul {
   background-color: var(--clr-orange);
   box-shadow: 4px 4px 65px 0px #00000073;
   color: var(--clr-white);
+  border: 2px solid #00529b;
   transition: 0.3s ease-in-out;
 }
 
@@ -699,8 +706,8 @@ ul {
 }
 
 .servicesGridRowOneCard:hover .cardIndicator,
-.servicesGridRowOneCard:hover .cardIndicator {
-  top: -2px;
+.servicesGridRowTwoCard:hover .cardIndicator {
+  top: -4px;
   transition: 0.3s ease-in-out;
 }
 
@@ -708,7 +715,7 @@ ul {
 .servicesGridRowTwoCard .cardIndicator {
   position: absolute;
   width: 100%;
-  top: 0;
+  top: -2px;
   left: 0;
   transition: 0.3s ease-in-out;
 }
@@ -740,4 +747,127 @@ ul {
 .servicesGridRowTwoCard p {
   font-weight: var(--font-regular);
   font-size: var(--smaller-font-size);
+}
+
+/*========== Why Choose Us Section ==========*/
+
+/*========== Why Choose Us Section: Top ==========*/
+
+.whyChooseUsTop {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 70px 90px 40px 90px;
+}
+
+.whyChooseUsTop .reasonsCards {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+.whyChooseUsTop .reasonsCards .reasonsCard {
+  position: relative;
+  width: 300px;
+  height: 140px;
+  display: flex;
+  justify-content: space-between;
+  background: var(--clr-white);
+  border-radius: 11px;
+  border: 1px solid #535353;
+}
+
+.whyChooseUsTop .reasonsCards .reasonsCard:hover {
+  background: var(--clr-purple);
+  color: var(--clr-white);
+  border: 1px solid #535353;
+  transition: 0.3s ease-in-out;
+}
+
+.whyChooseUsTop .reasonsCards .reasonsCard h3 {
+  display: flex;
+  align-items: end;
+  max-width: 50%;
+  padding: 20px;
+  font-weight: var(--font-semiBold);
+  font-size: 20px/30px;
+}
+
+.whyChooseUsTop .reasonsCards .reasonsCard img {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+}
+
+.whyChooseUsTop .reasonsCards .changeColor img {
+  filter: invert(0%) sepia(30%) saturate(30%) hue-rotate(40deg) brightness(85%) contrast(94%);
+}
+
+.whyChooseUsTop > p {
+  text-align: center;
+}
+
+/*========== Why Choose Us Section: Bottom ==========*/
+
+.whyChooseUsBottom {
+  width: 100%;
+  height: 100%;
+  background-image: url(images/whyChooseUsBottomBg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--clr-white);
+}
+
+.whyChooseUsBottom .whyChooseUsBottomOverlay {
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-green);
+  padding: 10px 320px 70px 320px;
+}
+
+.whyChooseUsBottom .whyChooseUsBottomContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.whyChooseUsBottom .whyChooseUsBottomContent > p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: var(--font-medium);
+  line-height: 25px;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+.whyChooseUsBottom .whyChooseUsBottomContent .numbersCards {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.whyChooseUsBottom .whyChooseUsBottomContent .numbersCards .numbersCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+
+.whyChooseUsBottom .whyChooseUsBottomContent .numbersCard h1 {
+  font-size: 50px;
+  font-weight: var(--font-regular);
+  line-height: 0px;
+  margin-top: 20px;
+}
+
+.whyChooseUsBottom .whyChooseUsBottomContent .numbersCard p {
+  font-size: 20px;
+  font-weight: var(--font-regular);
+  line-height: 0px;
+  min-width: max-content;
 }
