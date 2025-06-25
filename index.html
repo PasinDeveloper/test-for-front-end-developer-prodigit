@@ -5,18 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
-
-    const iframe = document.createElement("iframe"); const iframeStyles =
-    (styleString) => { const style = document.createElement('style');
-    style.textContent = styleString; document.head.append(style); }
-    iframeStyles(' .chat-frame { position: fixed; bottom: 50px; right: 50px;
-    border: none; } ') iframe.src = "http://localhost:3000/chatbot"
-    iframe.classList.add('chat-frame') document.body.appendChild(iframe)
-    window.addEventListener("message", (e) => { if(e.origin !==
-    "http://localhost:3000") return null let dimensions = JSON.parse(e.data)
-    iframe.width = dimensions.width iframe.height = dimensions.height
-    iframe.contentWindow.postMessage("ac673416-0fc2-4f67-aec5-9f9c34b9ed03",
-    "http://localhost:3000/") })
   </head>
 
   <body>
@@ -471,5 +459,51 @@
       <!-- footer -->
     </div>
     <!-- Parent Container -->
+
+    <script>
+      const iframe = document.createElement("iframe");
+      const iframeStyles = (styleString) => {
+        const style = document.createElement("style");
+        style.textContent = styleString;
+        document.head.append(style);
+      };
+
+      iframeStyles(`
+        .chat-frame { 
+          position: fixed; 
+          bottom: 50px; 
+          right: 50px; 
+          border: none; 
+        }
+      `);
+
+      iframe.src = "http://localhost:3000/chatbot";
+      iframe.classList.add("chat-frame");
+      document.body.appendChild(iframe);
+
+      // Send a message to the iframe once it has loaded
+      iframe.addEventListener("load", () => {
+        iframe.contentWindow.postMessage(
+          "ac673416-0fc2-4f67-aec5-9f9c34b9ed03",
+          "http://localhost:3000/"
+        );
+      });
+
+      // Listen for messages from the iframe to resize it
+      window.addEventListener("message", (e) => {
+        if (e.origin !== "http://localhost:3000") {
+          return;
+        }
+        try {
+          const dimensions = JSON.parse(e.data);
+          if (dimensions.width && dimensions.height) {
+            iframe.width = dimensions.width;
+            iframe.height = dimensions.height;
+          }
+        } catch (error) {
+          console.log("Non-JSON message received from iframe:", e.data);
+        }
+      });
+    </script>
   </body>
 </html>
