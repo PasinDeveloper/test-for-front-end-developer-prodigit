@@ -460,7 +460,7 @@
     </div>
     <!-- Parent Container -->
 
-    <script>
+    <!-- <script>
       const iframe = document.createElement("iframe");
       const iframeStyles = (styleString) => {
         const style = document.createElement("style");
@@ -504,6 +504,57 @@
           console.log("Non-JSON message received from iframe:", e.data);
         }
       });
+    </script> -->
+
+    <script>
+      // Create a full-screen, non-interactive container for the iframe
+      const noopyContainer = document.createElement("div");
+      noopyContainer.id = "noopy-widget-container";
+      document.body.appendChild(noopyContainer);
+
+      // --- Styles ---
+      Object.assign(noopyContainer.style, {
+        position: "fixed",
+        top: "0",
+        left: "0",
+        width: "100vw",
+        height: "100vh",
+        zIndex: "9999",
+        pointerEvents: "none", // Clicks pass through the container to the page behind it
+      });
+
+      // --- Iframe ---
+      const widgetIframe = document.createElement("iframe");
+      widgetIframe.src = `http://localhost:3001/chat?key=nlt-web-555`;
+      widgetIframe.setAttribute("allowtransparency", "true");
+
+      // This function will run after the iframe's content has loaded
+      widgetIframe.onload = () => {
+        try {
+          // Access the document inside the iframe and set its style
+          const iframeDoc = widgetIframe.contentWindow.document;
+          iframeDoc.body.style.backgroundColor = "transparent";
+          iframeDoc.documentElement.style.backgroundColor = "transparent";
+          if (isDebug) {
+            console.log(`${logSuffix}Iframe content styled successfully.`);
+          }
+        } catch (error) {
+          // This error will occur in production due to cross-origin security
+          console.error(
+            `${logSuffix}Could not style iframe content due to cross-origin policy.`,
+            error
+          );
+        }
+      };
+
+      Object.assign(widgetIframe.style, {
+        width: "100%",
+        height: "100%",
+        border: "none",
+        backgroundColor: "transparent",
+        pointerEvents: "auto", // The iframe itself and its content are interactive
+      });
+      noopyContainer.appendChild(widgetIframe);
     </script>
   </body>
 </html>
