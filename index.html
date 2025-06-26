@@ -533,6 +533,7 @@
         try {
           // Access the document inside the iframe and set its style
           const iframeDoc = widgetIframe.contentWindow.document;
+          iframeDoc.html.style.backgroundColor = "transparent";
           iframeDoc.body.style.backgroundColor = "transparent";
           iframeDoc.documentElement.style.backgroundColor = "transparent";
           if (isDebug) {
